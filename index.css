@@ -1,0 +1,176 @@
+:root {
+  --cor-primaria: #443730; /*van-dyke*/
+  --cor-secundaria: #786452; /*coyote*/
+  --cor-terciaria: #a5907e; /*beaver*/
+}
+
+
+
+body {
+  color: white;
+  margin: 0;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Mono', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 2px;
+  background-color: var(--chocolate-cosmos);
+  background: -webkit-linear-gradient(top, var(--cor-terciaria), var(--cor-secundaria));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  text-align: center;
+}
+
+
+header, nav, footer {
+  width: 100%;
+  height: 40px;
+}
+
+header, footer {
+  background-color: var(--cor-primaria);
+}
+
+header {
+  top: 0;
+}
+
+nav {
+  background-color: var(--cor-secundaria);
+}
+
+footer {
+  display: block;
+  position: fixed;
+  bottom: 0;
+}
+
+.centralizarVertical {
+  display: flex;
+  height: 100%;
+}
+
+@keyframes rotateImage {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ladoAlado {
+  from {
+    letter-spacing: 5px;
+    margin-right: 100%;
+    width: 300%;
+  }
+
+  50% {
+    letter-spacing: 15px;
+  }
+
+  to {
+    letter-spacing: 5px;
+    margin-right: 0%;
+    width: 100%;
+  }
+}
+
+.cafezinhoWrapper {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+img.cafezinho {
+  border: 5px solid var(--cor-primaria);
+  background-color: var(--cor-secundaria);
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  animation-name: rotateImage;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transition: 1s all ease-out;
+}
+
+img.cafezinho.reverse {
+  animation-direction: reverse
+}
+
+img.cafezinho:hover {
+  background-color: var(--cor-primaria);
+}
+
+@keyframes espacaLetras {
+  from { letter-spacing: 2px; }
+  50% { letter-spacing: 5px; }
+  to { letter-spacing: 2px; }
+}
+
+a {
+  color: white;
+  transition: 1s all ease-out;
+}
+
+a:hover {
+  color: var(--cor-terciaria);
+  animation: espacaLetras 2s 1;
+}
+
+#cafeCards {
+  margin: 10px;
+  padding: 10px;
+}
+
+.cafe-card {
+  height: 320px;
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5%;
+  background-color: var(--cor-primaria);
+  display: inline-block;
+}
+
+.cafe-abrasileirado {
+  background-color: var(--cor-terciaria);
+  width: 100%;
+  max-width: 250px;
+  height: 60%;
+  max-height: 250px;
+  border-radius: 5%;
+  display: inline-block;
+}
+
+@keyframes aumentaCard {
+  from {
+    height: 320px;
+    width: 200px;
+    font-size: 20px;
+  }
+
+  50% {
+    height: 380px;
+    width: 250px;
+    font-size: 25px;
+  }
+
+  to {
+    height: 320px;
+    width: 200px;
+    font-size: 20px;
+  }
+}
+
+.cafe-card:hover {
+  animation-name: aumentaCard;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+}
